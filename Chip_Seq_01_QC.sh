@@ -60,8 +60,8 @@ do
     -I ${id}_2.fq.gz \
     -o ${cleandata_out}/${base}_1.clean.fq.gz \
     -O ${cleandata_out}/${base}_2.clean.fq.gz \
-    -j ${fastp_log}/${base}.json \
-    -h ${fastp_log}/${base}.html \
+    -j ${fastp_log}/${base}.fastp.json \
+    -h ${fastp_log}/${base}.fastp.html \
     2> ${fastp_log}/${base}.logs
 
     echo Sample ${base} is done
@@ -74,4 +74,4 @@ fastqc -t 20 ${cleandata_out}/*.fq.gz -o ${fastqc_v1_log}
 
 # multiqc
 multiqc -o ${fastqc_v1_log} ${fastqc_v1_log}
-
+multiqc -o ${fastp_log} ${fastp_log}
