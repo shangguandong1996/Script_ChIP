@@ -70,7 +70,7 @@ done
 echo fastp ends
 
 # fastqc_v1
-fastqc -t 20 ${cleandata_out}/*.fq.gz -o ${fastqc_v1_log}
+fastqc -q -t 20 ${cleandata_out}/*.fq.gz -o ${fastqc_v1_log}
 
 # multiqc
 multiqc -o ${fastqc_v1_log} ${fastqc_v1_log}
